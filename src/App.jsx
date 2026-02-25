@@ -214,9 +214,18 @@ function DayCard({ day, unit, isExpanded, onToggle, index }) {
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, flex: 1 }}>
           <span style={{ fontSize: 32 }}>{icon}</span>
-          <div>
+          <div style={{ minWidth: 0 }}>
             <div style={{ fontWeight: 700, fontSize: 15, fontFamily: "'DM Sans', sans-serif" }}>{getDayName(day.date)}</div>
             <div style={{ fontSize: 12, opacity: 0.6, fontFamily: "'DM Sans', sans-serif" }}>{getFormattedDate(day.date)}</div>
+            <div style={{
+              fontSize: 12,
+              marginTop: 6,
+              lineHeight: 1.35,
+              opacity: 0.9,
+              fontFamily: "'DM Sans', sans-serif",
+            }}>
+              🌈 {precip.text}
+            </div>
           </div>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -254,10 +263,6 @@ function DayCard({ day, unit, isExpanded, onToggle, index }) {
             "{info.optimistic}"
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-            <div style={{ background: "rgba(255,255,255,0.06)", borderRadius: 12, padding: 12 }}>
-              <div style={{ fontSize: 11, opacity: 0.5, marginBottom: 4, fontFamily: "'DM Sans', sans-serif" }}>☀️ SUNNY ODDS</div>
-              <div style={{ fontSize: 13, fontFamily: "'DM Sans', sans-serif" }}>{precip.emoji} {precip.text}</div>
-            </div>
             <div style={{ background: "rgba(255,255,255,0.06)", borderRadius: 12, padding: 12 }}>
               <div style={{ fontSize: 11, opacity: 0.5, marginBottom: 4, fontFamily: "'DM Sans', sans-serif" }}>WIND VIBES</div>
               <div style={{ fontSize: 13, fontFamily: "'DM Sans', sans-serif" }}>💨 {wind}</div>
